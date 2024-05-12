@@ -40,9 +40,6 @@ export const SearchBar: React.FC<
       <label className="hidden" htmlFor="search">
         Search
       </label>
-      <p className="hidden">
-        Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to open search
-      </p>
       <div className="absolute top-0 bottom-0 left-0 flex items-center justify-center w-10 pl-6 pointer-events-none">
         <MagnifyingGlassIcon className="stroke-gray-500" />
       </div>
@@ -88,11 +85,7 @@ export const SearchBar: React.FC<
         <div className="absolute top-0 bottom-0 right-0 flex items-center justify-center w-10">
           <button
             onClick={() => {
-              console.log(searchTerm);
               setSearchTerm("");
-              setTimeout(() => {
-                console.log(searchTerm);
-              }, 0);
             }}
           >
             <XCircleIcon className="w-6 h-auto stroke-gray-500" />
