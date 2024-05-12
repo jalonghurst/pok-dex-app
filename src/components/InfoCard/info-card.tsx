@@ -7,13 +7,19 @@ interface InfoCardProps {
 
 const InfoCard: React.FC<InfoCardProps> = ({ pokemon }) => {
   if (!pokemon || !pokemon.sprites || !pokemon.sprites.front_default) {
-    return null;
+    <div className="flex flex-col items-center p-6 mx-auto overflow-y-auto text-sm bg-white shadow-md md:w-1/2 rounded-xl card">
+      <h2 className="text-2xl font-bold text-center">
+        Pokemon data is not available
+      </h2>
+    </div>;
   }
   return (
     <div className="flex flex-col items-center p-6 mx-auto overflow-y-auto text-sm bg-white shadow-md md:w-1/2 rounded-xl card">
       {pokemon && (
         <div className="w-full p-6 space-y-3 text-left border border-gray-200">
-          <h2 className="text-2xl font-bold text-center">{formatString(pokemon.name)}</h2>
+          <h2 className="text-2xl font-bold text-center">
+            {formatString(pokemon.name)}
+          </h2>
           <img
             className="w-1/2 m-auto sm:w-1/4"
             src={pokemon.sprites.front_default}
