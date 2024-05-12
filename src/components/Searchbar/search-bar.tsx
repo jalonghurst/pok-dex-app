@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MagnifyingGlassIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { Pokemon } from "../../types/pokemon";
 import { fetchPokemonByName, searchPokemon } from "../../services/pokedex-api";
+import { formatString } from "../../utils/formatString";
 
 interface IExtraProps {
   showCancel?: boolean;
@@ -75,7 +76,7 @@ export const SearchBar: React.FC<
                     className="w-3 h-3"
                   />
                 )}
-                <p>{pokemon.name}</p>
+                <p>{formatString(pokemon.name)}</p>
               </li>
             ))}
           </ul>

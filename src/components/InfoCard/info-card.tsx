@@ -1,4 +1,4 @@
-import { formatString } from "../../formatString";
+import { formatString } from "../../utils/formatString";
 import { Pokemon } from "../../types/pokemon";
 
 interface InfoCardProps {
