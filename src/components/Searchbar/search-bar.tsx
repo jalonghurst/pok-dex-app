@@ -36,6 +36,19 @@ export const SearchBar: React.FC<
     }
   }, [searchTerm]);
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleDropdownClick = (pokemon: Pokemon) => {
+    fetchPokemonByName(pokemon.name).then((result) => {
+      if (result) {
+        setSelectedPokemon(result);
+      }
+    });
+    setResults([]);
+  };
+
   return (
     <div className="relative w-auto">
       <label className="hidden" htmlFor="search">
@@ -49,7 +62,7 @@ export const SearchBar: React.FC<
         autoComplete="off"
         value={searchTerm}
         type="text"
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleInputChange}
         className="block w-full h-10 px-4 pl-12 text-base text-gray-500 rounded-full focus:border-blue-500 focus:ring-blue-500"
       />
       {results.length > 0 && (
@@ -59,22 +72,9 @@ export const SearchBar: React.FC<
               <li
                 key={pokemon.name}
                 className="h-auto px-4 py-2 cursor-pointer hover:bg-gray-200"
-                onClick={() => {
-                  fetchPokemonByName(pokemon.name).then((result) => {
-                    if (result) {
-                      setSelectedPokemon(result);
-                    }
-                  });
-                  setResults([]);
-                }}
+                onClick={() => handleDropdownClick(pokemon)}
+                role="option"
               >
-                {pokemon.sprites && (
-                  <img
-                    src={pokemon.sprites.front_default}
-                    alt={pokemon.name}
-                    className="w-3 h-3"
-                  />
-                )}
                 <p>{formatString(pokemon.name)}</p>
               </li>
             ))}
@@ -83,11 +83,7 @@ export const SearchBar: React.FC<
       )}
       {showCancel && (
         <div className="absolute top-0 bottom-0 right-0 flex items-center justify-center w-10">
-          <button
-            onClick={() => {
-              setSearchTerm("");
-            }}
-          >
+          <button onClick={() => setSearchTerm("")}>
             <XCircleIcon className="w-6 h-auto stroke-gray-500" />
           </button>
         </div>
