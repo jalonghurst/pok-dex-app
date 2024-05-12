@@ -16,7 +16,6 @@ export async function getRandomPokemon(): Promise<Pokemon | undefined> {
     );
     const pokemonData = await pokemonResponse.json();
 
-    console.log(pokemonData);
     return pokemonData;
   } catch (error) {
     console.error("Error:", error);

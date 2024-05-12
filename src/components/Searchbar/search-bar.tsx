@@ -66,7 +66,6 @@ export const SearchBar: React.FC<
                     }
                   });
                   setResults([]);
-                  console.log(selectedPokemon && selectedPokemon.name);
                 }}
               >
                 {pokemon.sprites && (
