@@ -54,7 +54,7 @@ export const SearchBar: React.FC<
       <label className="hidden" htmlFor="search">
         Search
       </label>
-      <div className="absolute top-0 bottom-0 left-0 flex items-center justify-center w-10 pl-6 pointer-events-none">
+      <div className="absolute top-0 bottom-0 left-0 flex items-center justify-center w-10 pl-6">
         <MagnifyingGlassIcon className="stroke-gray-500" />
       </div>
       <input
@@ -63,7 +63,7 @@ export const SearchBar: React.FC<
         value={searchTerm}
         type="text"
         onChange={handleInputChange}
-        className="block w-full h-10 px-4 pl-12 text-base text-gray-500 rounded-full focus:border-blue-500 focus:ring-blue-500"
+        className="block w-full h-10 px-4 pl-12 text-gray-500 rounded-full focus:border-blue-500 focus:ring-blue-500"
       />
       {results.length > 0 && (
         <div className="absolute z-10 w-full mt-1 bg-white rounded-md shadow-lg overflow-y-auto max-h-[500px]">

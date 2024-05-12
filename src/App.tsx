@@ -13,7 +13,7 @@ const App: React.FC<AppProps> = ({ initialPokemon }) => {
   const [selectedPokemon, setSelectedPokemon] = useState(initialPokemon);
 
   return (
-    <div className="p-6 space-y-6 overflow-hidden justify-items-center">
+    <div className="p-6 space-y-6 overflow-hidden">
       <a href="/">
         <img src="/logo.svg" className="h-24 m-auto logo" alt="Pokemon Logo" />
       </a>

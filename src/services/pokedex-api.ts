@@ -9,8 +9,7 @@ export async function getRandomPokemon(): Promise<Pokemon | undefined> {
     const totalData = await totalResponse.json();
     const total = totalData.count;
     const randomId = Math.floor(Math.random() * total) + 1;
-
-    // Fetch the Pokemon with the random ID
+    
     const pokemonResponse = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${randomId}`
     );
