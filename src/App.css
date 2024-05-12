@@ -3,7 +3,7 @@
   height: 100vh;
   margin: 0 auto;
   text-align: center;
-  background-image: url("/src/public/img/pokeball.svg");
+  background-image: url("/pokeball.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

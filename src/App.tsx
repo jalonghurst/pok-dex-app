@@ -11,7 +11,7 @@ function App({ initialPokemon }: { initialPokemon: Pokemon | undefined }) {
   return (
     <div className="p-6 space-y-6 overflow-hidden justify-items-center">
       <a href="/">
-        <img src="/src/public/img/logo.svg" className="h-24 m-auto logo" />
+        <img src="/logo.svg" className="h-24 m-auto logo" />
       </a>
       <div className="flex justify-center">
         <SearchBar
